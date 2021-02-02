@@ -1,13 +1,12 @@
-# **Final Project**
-Use this `REAMDE.md` file to describe your final project (as detailed on Canvas).
+# **Project Proposal**
 
-## **Domain of Interest**
+## **Domain of Interest: Social Media**
 ### **Why are you interested in this field/domain?**
 - We’re interested in this domain because social media consumption behaviors could help us understand what makes people follow certain social media pages or trends more over the others. This information could help future creators and marketers strategize better ideas and plans during the content creation process.
 
 ### **What other examples of data driven project have you found related to this domain (share at least 3)?**
  - [How I Exploited My Own Social Media Data](https://towardsdatascience.com/how-i-exploited-my-own-social-media-data-84e886dcf10)
-- [THE POTENTIAL OF SOCIAL MEDIA INTELLIGENCE TO IMPROVE PEOPLE’S LIVES](https://datacollaboratives.org/social-media.html)
+ - [THE POTENTIAL OF SOCIAL MEDIA INTELLIGENCE TO IMPROVE PEOPLE’S LIVES](https://datacollaboratives.org/social-media.html)
  - [Data Mining for Predictive Social Network Analysis](https://www.toptal.com/data-science/social-network-data-mining-for-predictive-analysis)
 
 
@@ -39,16 +38,18 @@ Use this `REAMDE.md` file to describe your final project (as detailed on Canvas)
 ### **Dataset 2:**
 
 >Where did you download the data (e.g., a web URL)?
-
-- This data set was found in the data.world website. 
+- This data set was found in the data.world website.
 [most_followed_ig.csv](https://data.world/socialmediadata/most-followed-on-instagram/workspace/file?filename=most_followed_ig.csv)
 
 >How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?
 - The data was collected through getting a list of the 100 most followed celebrities and then pulling statistics about their account and personal profile on instagram.
+
 >How many observations (rows) are in your data?
-- 100 rows of data 
+- 100 rows of data
+
 >How many features (columns) are in the data?
 - 8 columns of data
+
 >What questions (from above) can be answered using the data in this dataset?
 - I feel like it could help answer one of the first questions we had. By viewing high priority accounts we get to see what trends and style of accounts make it to the top.
 ### **Dataset 3:**
