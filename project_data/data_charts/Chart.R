@@ -12,7 +12,18 @@ library(ggplot2)
 
 female_response <- social_media %>% 
   filter(segment_description == "Female voters") %>% 
-  select(segment_description, answer)
+  select(count, answer)
 View(female_response)
 
-chart_x <- data.frame(x = social_media)
+answers <- female_response$answer
+count <- female_response$count
+
+df_x <- data.frame(count, answers)
+df_x
+
+chart_x <- ggplot(df_x, aes(x=answers, y=count, group=answers)) + 
+  geom_bar(stat = "identity")+ 
+  scale_color_manual(values = c("red", "grey"))
+chart_x 
+
+
