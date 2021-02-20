@@ -1,3 +1,8 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 ## Domain
 
 Our domain of interest is social media. We’re interested in this domain because social media consumption behaviors could help us understand what makes people follow certain social media pages or trends more over the others. This information could help future creators and marketers strategize better ideas and plans during the content creation process. We hope to uncover what elements of a social media page lead to more engagement, what trends are more likely to be popular, and how social media usage varies amongst different groups.
@@ -12,29 +17,45 @@ The dataset collected information on which social media platform influenced peop
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(ggplot2)
-library(tidyverse)
-library(dplyr)
-library(knitr)
-library(rmarkdown)
+library(plyr)
 source("SummaryInfoScript.R")
 
 summary_info
 ```
-
+This summary shows that Instagram and Facebook are the most influential in a person's online shopping. However, more people said none of the social media platforms had the most influence.
 
 ## Aggregate Table
 
 ```{r, echo = FALSE, message = TRUE}
 source("Aggregate_table.R")
-summary_info
+university_social_coverage
 ```
+This table shows the total count and percentage of each answer among University students. We see here that it follows the same pattern of none, Instagram, and Facebook being the most popular answers.
 
-## Charts
+## Chart 1
 
 ```{r, echo = FALSE, message = TRUE}
 
 source("chart_1.R")
 chart_x
-```
 
+```
+This bar graph investigates how female responders answered this survery. The proportion of those who picked Instagram is much higher among only females than the whole sample.
+
+## Chart 2
+```{r, echo = FALSE, message = TRUE}
+
+source("chart_2.R")
+chart_y
+
+```
+This scatterplot shows us the relationship between percentage and count for each social media platform and each segment group. This scatterplot shows us that the percentage for each social media is about the same in each segment group.
+
+## Chart 3
+```{r, echo = FALSE, message = TRUE}
+
+source("chart_3.R")
+chart_z
+
+```
+This pie chart shows the percentage of votes per app among UW students. Very few UW students voted for Snapchat and Twitter, while most of the votes were for none, Instagram, and Facebook.

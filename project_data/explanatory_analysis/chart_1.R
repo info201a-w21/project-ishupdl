@@ -1,7 +1,7 @@
 library(dplyr)
-install.packages("ggplot2")
-install.packages(reshape2)
-install.packages(lintr)
+
+library(reshape2)
+
 library(ggplot2)
 
 #I want to compare which social media app influences 
