@@ -1,0 +1,67 @@
+## Domain
+
+Our domain of interest is social media. We’re interested in this domain because social media consumption behaviors could help us understand what makes people follow certain social media pages or trends more over the others. This information could help future creators and marketers strategize better ideas and plans during the content creation process. We hope to uncover what elements of a social media page lead to more engagement, what trends are more likely to be popular, and how social media usage varies amongst different groups.
+
+## Data
+
+We found the data set we used, Social Influence on Shopping, on a site called data.world. This data was collected by a team led by Adam Halper using their social survey mobile platform Whatsgoodly. They have over 300,000 millenial and Gen Z members and garnered over 150 million survey responses from this demographic to date. This data contains 1450 observations and 6 features.
+
+## Summary Information
+
+The dataset collected information on which social media platform influenced people's online shopping the most. In our summary information script, we made a list of how many people felt most influenced by each social media platform.
+
+```{r, echo = FALSE}
+
+
+```
+`r summary_info`
+
+## Aggragate Table
+
+```{r, echo = FALSE}
+social_influence_shopping <- read.csv("WhatsgoodlyData-6.csv")
+library(tidyverse)
+library(lintr)
+lint("Aggregate_table.R")
+
+#create a aggregate table that shows the social media coverage among
+#universities in Segment_Type column
+
+university_social_coverage <- social_influence_shopping %>%
+  group_by(Answer) %>%
+  filter(Segment.Type == "University") %>%
+  mutate(total_count = sum(Count)) %>%
+  summarise(total_count = max(total_count)) %>%
+  rename(answer = Answer) %>%
+  mutate(percentage = round(total_count / sum(total_count) * 100)) %>%
+  summarise(answer, total_count, percentage)
+```
+
+## Charts
+
+```{r, echo = FALSE}
+social_media <- read.csv(file = 'whatsgoodlydata_6.csv')
+
+library(dplyr)
+library(reshape2)
+library(ggplot2)
+
+#I want to compare which social media app influences 
+#shopping the most among female respondents 
+
+female_response <- social_media %>% 
+  filter(segment_description == "Female voters") %>% 
+  select(count, answer)
+
+
+answers <- female_response$answer
+count <- female_response$count
+
+df_x <- data.frame(count, answers)
+df_x
+
+chart_x <- ggplot(df_x, aes(x=answers, y=count, group=answers)) + 
+  geom_bar(stat = "identity")+ 
+  scale_fill_manual(values=c("#55DDE0", "#33658A", "#2F4858", "#F6AE2D", "#F26419", "#999999")) + 
+  labs(title = "App Votes from Female Responders")
+chart_x 
