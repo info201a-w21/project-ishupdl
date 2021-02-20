@@ -1,6 +1,3 @@
-setwd("~/INFO_201/project-ishupdl/project_data/data_charts")
-social_media <- read.csv(file = 'whatsgoodlydata_6.csv')
-
 library(dplyr)
 install.packages("ggplot2")
 install.packages(reshape2)

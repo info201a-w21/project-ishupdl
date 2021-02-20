@@ -10,58 +10,29 @@ We found the data set we used, Social Influence on Shopping, on a site called da
 
 The dataset collected information on which social media platform influenced people's online shopping the most. In our summary information script, we made a list of how many people felt most influenced by each social media platform.
 
-```{r, echo = FALSE}
-
+```{r, echo = FALSE, message = TRUE}
+library(ggplot2)
+library(tidyverse)
+library(dplyr)
+library(knitr)
+library(rmarkdown)
+source("SummaryInfoScript.R")
 
 ```
 `r summary_info`
 
-## Aggragate Table
+## Aggregate Table
 
 ```{r, echo = FALSE}
-social_influence_shopping <- read.csv("WhatsgoodlyData-6.csv")
-library(tidyverse)
-library(lintr)
-lint("Aggregate_table.R")
-
-#create a aggregate table that shows the social media coverage among
-#universities in Segment_Type column
-
-university_social_coverage <- social_influence_shopping %>%
-  group_by(Answer) %>%
-  filter(Segment.Type == "University") %>%
-  mutate(total_count = sum(Count)) %>%
-  summarise(total_count = max(total_count)) %>%
-  rename(answer = Answer) %>%
-  mutate(percentage = round(total_count / sum(total_count) * 100)) %>%
-  summarise(answer, total_count, percentage)
+source("Aggregate_table.R")
+summary_info
 ```
 
 ## Charts
 
 ```{r, echo = FALSE}
-social_media <- read.csv(file = 'whatsgoodlydata_6.csv')
 
-library(dplyr)
-library(reshape2)
-library(ggplot2)
+source("chart_1.R")
+chart_x
+```
 
-#I want to compare which social media app influences 
-#shopping the most among female respondents 
-
-female_response <- social_media %>% 
-  filter(segment_description == "Female voters") %>% 
-  select(count, answer)
-
-
-answers <- female_response$answer
-count <- female_response$count
-
-df_x <- data.frame(count, answers)
-df_x
-
-chart_x <- ggplot(df_x, aes(x=answers, y=count, group=answers)) + 
-  geom_bar(stat = "identity")+ 
-  scale_fill_manual(values=c("#55DDE0", "#33658A", "#2F4858", "#F6AE2D", "#F26419", "#999999")) + 
-  labs(title = "App Votes from Female Responders")
-chart_x 

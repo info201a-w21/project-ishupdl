@@ -11,7 +11,11 @@ We found the data set we used, Social Influence on Shopping, on a site called da
 The dataset collected information on which social media platform influenced people's online shopping the most. In our summary information script, we made a list of how many people felt most influenced by each social media platform.
 
 ```{r, echo = FALSE}
+setwd("~/project_data/explanatory_analysis")
+social_media <- read.csv(file = 'whatsgoodlydata_6.csv')
 
+library(knitr)
+source("SummaryInfoScript.R")
 
 ```
 `r summary_info`
