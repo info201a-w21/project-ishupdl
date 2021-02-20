@@ -10,7 +10,8 @@ We found the data set we used, Social Influence on Shopping, on a site called da
 
 The dataset collected information on which social media platform influenced people's online shopping the most. In our summary information script, we made a list of how many people felt most influenced by each social media platform.
 
-```{r, echo = FALSE, message = TRUE}
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 library(tidyverse)
 library(dplyr)
@@ -18,19 +19,20 @@ library(knitr)
 library(rmarkdown)
 source("SummaryInfoScript.R")
 
+summary_info
 ```
-`r summary_info`
+
 
 ## Aggregate Table
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, message = TRUE}
 source("Aggregate_table.R")
 summary_info
 ```
 
 ## Charts
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, message = TRUE}
 
 source("chart_1.R")
 chart_x
