@@ -19,6 +19,8 @@ The dataset collected information on which social media platform influenced peop
 knitr::opts_chunk$set(echo = TRUE)
 library(plyr)
 library(knitr)
+library(dplyr)
+library(lintr)
 source("SummaryInfoScript.R")
 source("Aggregate_table.R")
 source("chart_1.R")
@@ -46,6 +48,8 @@ This table shows the total count and percentage of each answer among University 
 chart_x
 
 ```
+
+
 This bar graph investigates how female responders answered this survery. The proportion of those who picked Instagram is much higher among only females than the whole sample.
 
 ## Chart 2
@@ -54,6 +58,8 @@ This bar graph investigates how female responders answered this survery. The pro
 chart_y
 
 ```
+
+
 This scatterplot shows us the relationship between percentage and count for each social media platform and each segment group. This scatterplot shows us that the percentage for each social media is about the same in each segment group.
 
 ## Chart 3
@@ -62,4 +68,6 @@ This scatterplot shows us the relationship between percentage and count for each
 chart_z
 
 ```
+
+
 This pie chart shows the percentage of votes per app among UW students. Very few UW students voted for Snapchat and Twitter, while most of the votes were for none, Instagram, and Facebook.

@@ -1,7 +1,8 @@
 my_dataframe <- read.csv("whatsgoodlydata_6.csv")
-lint("SummaryInfoScript.R")
 library(tidyverse)
-
+library(dplyr)
+library(lintr)
+lint("SummaryInfoScript.R")
 summary_info <- list()
 # Number of features (columns)
 summary_info$num_features <- ncol(my_dataframe)

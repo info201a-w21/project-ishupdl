@@ -3,7 +3,8 @@ social_media <- read.csv(file = "whatsgoodlydata_6.csv")
 library(dplyr)
 library(ggplot2)
 library(tidyr)
-
+library(lintr)
+lint("chart_3.R")
 mycols <- c("#0073C2FF", "#EFC000FF", "#868686FF", "#CD534CFF", "#CD534CFF")
 
 uw_response <- social_media %>%

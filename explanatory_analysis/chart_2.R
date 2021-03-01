@@ -4,7 +4,7 @@ social_media <- read.csv(file = "whatsgoodlydata_6.csv")
 library(dplyr)
 library(ggplot2)
 library(tidyr)
-
+library(lintr)
 
 percent_answer <- social_media %>%
   group_by(segment_type, answer) %>%
