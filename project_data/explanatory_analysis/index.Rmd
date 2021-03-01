@@ -18,17 +18,24 @@ The dataset collected information on which social media platform influenced peop
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(plyr)
+library(knitr)
 source("SummaryInfoScript.R")
-
+source("Aggregate_table.R")
+source("chart_1.R")
+source("chart_2.R")
+source("chart_3.R")
+```
+```{r, echo = FALSE, message = TRUE}
 summary_info
 ```
+
+
 This summary shows that Instagram and Facebook are the most influential in a person's online shopping. However, more people said none of the social media platforms had the most influence.
 
 ## Aggregate Table
 
 ```{r, echo = FALSE, message = TRUE}
-source("Aggregate_table.R")
-university_social_coverage
+kable(university_social_coverage)
 ```
 This table shows the total count and percentage of each answer among University students. We see here that it follows the same pattern of none, Instagram, and Facebook being the most popular answers.
 
@@ -36,7 +43,6 @@ This table shows the total count and percentage of each answer among University 
 
 ```{r, echo = FALSE, message = TRUE}
 
-source("chart_1.R")
 chart_x
 
 ```
@@ -45,7 +51,6 @@ This bar graph investigates how female responders answered this survery. The pro
 ## Chart 2
 ```{r, echo = FALSE, message = TRUE}
 
-source("chart_2.R")
 chart_y
 
 ```
@@ -54,7 +59,6 @@ This scatterplot shows us the relationship between percentage and count for each
 ## Chart 3
 ```{r, echo = FALSE, message = TRUE}
 
-source("chart_3.R")
 chart_z
 
 ```

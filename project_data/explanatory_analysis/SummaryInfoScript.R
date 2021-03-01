@@ -1,11 +1,11 @@
 my_dataframe <- read.csv("whatsgoodlydata_6.csv")
-
-install.packages("tidyverse")
+lint("SummaryInfoScript.R")
 library(tidyverse)
 
 summary_info <- list()
 # Number of features (columns)
 summary_info$num_features <- ncol(my_dataframe)
+
 # Number of different social media platforms as answer choices
 summary_info$num_socials <- length(unique(my_dataframe[["answer"]]))
 
