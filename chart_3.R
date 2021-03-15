@@ -1,11 +1,15 @@
 lint("chart_3.R")
-social_media <- read.csv(file = "whatsgoodlydata_6.csv")
+social_media <- read.csv("~/Desktop/project-ishupdl/whatsgoodlydata_6.csv")
 library(dplyr)
 library(ggplot2)
 library(tidyr)
-library(lintr)
-lint("chart_3.R")
 mycols <- c("#0073C2FF", "#EFC000FF", "#868686FF", "#CD534CFF", "#CD534CFF")
+
+umich_response <- social_media %>%
+  filter(segment_description == "University of Michigan") %>%
+  mutate(prop_2 = (count / 49 * 100)) %>%
+  mutate(prop = round(prop_2, 1)) %>%
+  select(count, answer, prop)
 
 uw_response <- social_media %>%
   filter(segment_description == "University of Washington") %>%
@@ -57,3 +61,4 @@ pie <- pie + theme_classic() + theme(axis.line =
                                                                 "#666666"))
 chart_z <- pie
 chart_z
+

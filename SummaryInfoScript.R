@@ -1,7 +1,4 @@
-my_dataframe <- read.csv("whatsgoodlydata_6.csv")
-
-install.packages("tidyverse")
-library(tidyverse)
+my_dataframe <- read.csv("Whatsgoodlydata_6.csv")
 
 summary_info <- list()
 #Number of features (columns)
