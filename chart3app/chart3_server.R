@@ -49,8 +49,8 @@ umich_plotly_chart3 <- plot_ly(umich_response, labels = ~answer, values = ~count
 chart3_server <- shinyServer(function(input, output) {
 
     output$pie_charts <- renderPlotly({
-      umich_plotly_chart3
-      uw_plotly_chart3
-    })
+      if (input$pie_options == "umich_plotly_chart3") {umich_plotly_chart3}
+      else {uw_plotly_chart3}
+      })
+      })
 
-    })
