@@ -41,6 +41,6 @@ server <- function(input, output) {
       labs(x = "Social media platorm",
            y = "Number of response",
            title = title)
-    p
+  
   })
 }
