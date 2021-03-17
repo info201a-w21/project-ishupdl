@@ -9,13 +9,10 @@
 
 social_media <- read.csv("WhatsgoodlyData-6.csv"
                          , stringsAsFactors = FALSE)
-View(social_media)
 library(shiny)
 library(plotly)
 library(ggplot2)
 library(tidyverse)
-library(lintr)
-library(dplyr)
 
 female_response <- social_media %>%
   filter(Segment.Description == "Female voters") %>%

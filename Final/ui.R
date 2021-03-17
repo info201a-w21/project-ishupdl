@@ -43,7 +43,7 @@ page_one <- tabPanel(
   )
 )
 page_two <- tabPanel(
-  "Chart 1",
+  "Gender",
   h1("Social Media Influence on Shopping by Gender"),
 
   sidebarLayout(
@@ -94,7 +94,7 @@ main_graph <- mainPanel(
 )
 
 page_three <- tabPanel(
-  "Chart 2",
+  "Segment Type",
   h1("Social Media Preference by Segment Type"),
   sidebarLayout(
     option_box_1,
@@ -103,7 +103,7 @@ page_three <- tabPanel(
 )
 # This is the start of page four
 page_four <- tabPanel(
-  "Chart 3",
+  "Universities",
   h1("Votes from Colleges"),
   sidebarLayout(
     sidebarPanel(
