@@ -106,9 +106,7 @@ none_graph <- ggplot(none, aes(x = percent_answer_none, y = count_answer_none)) 
 server <- function(input, output) {
   
 output$graph <- renderPlotly({
-#      ggplot(percent_total) + 
-#      geom_point(aes_string(x = input$xaxis, y = input$yaxis, color = factor(percent_segment)),
-#                 size = input$size)
+
       
       if (input$axiscode == "facebook_graph") {facebook_graph}
       else if (input$axiscode == "snapchat_graph") {snapchat_graph}
